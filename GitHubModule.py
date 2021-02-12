@@ -14,36 +14,27 @@ class GitHub:
     with requests.session() as s:
       APIdata = requests.get(f'{self.url}{user}', headers=self.headers).json()
       
-      if select.lower() == "login":
-        return APIdata["login"]
-      elif select.lower() == "avatar":
-        return APIdata["avatar_url"]
-      elif select.lower() == "url":
-        return APIdata["html_url"]
-      elif select.lower() == "starred":
-        return f'https://github.com/{user}?tab=stars'
-      elif select.lower() == "followers":
-        return f'{APIdata["followers"]} - https://api.github.com/users/asianmancoder/followers'
-      elif select.lower() == "following":
-        return f'{APIdata["following"]} - https://api.github.com/users/asianmancoder/following'
-      elif select.lower() in ("repos", "repo count", "repositories"):
-        return f'{APIdata["public_repos"]} - https://github.com/{user}/repositories'
-      elif select.lower() == "name":
-        return APIdata["name"]
-      elif select.lower() == "company":
-        return APIdata["company"]
-      elif select.lower() == "website":
-        return APIdata["blog"]
-      elif select.lower() == "location":
-        return APIdata["location"]
-      elif select.lower() == "bio":
-        return APIdata["bio"]
-      elif select.lower() == "created":
-        return APIdata["created_at"]
-      elif select.lower() == "updated":
-        return APIdata["updated_at"]
+      infoDict = {
+        "login": APIdata["login"],
+        "avatar": APIdata["avatar_url"],
+        "url": APIdata["html_url"],
+        "starred": f'https://github.com/{user}?tab=stars',
+        "followers": f'{APIdata["followers"]} - https://api.github.com/users/{user}/followers',
+        "following": f'{APIdata["following"]} - https://api.github.com/users/{user}/following',
+        "repos": f'{APIdata["public_repos"]} - https://github.com/{user}/repositories',
+        "name": APIdata["name"],
+        "company": APIdata["company"],
+        "website": APIdata["blog"],
+        "location": APIdata["location"],
+        "created": APIdata["created_at"],
+        "updated": APIdata["updated_at"]
+      }
+
+      if select in infoDict:
+        return infoDict[select]
+      else: return f'{select} is an invalid key!'
 
      
 if __name__ == "__main__":
   gh = GitHub()
-  print(gh.information('v1nam'. 'repo count'))
+  print(gh.information('v1nam'. 'repos'))
