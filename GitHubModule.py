@@ -43,7 +43,7 @@ class GitHub:
       elif select.lower() == "updated":
         return APIdata["updated_at"]
 
-
-
-gh = GitHub()
-print(gh.information('v1nam', 'repo count'))
+     
+if __name__ == "__main__":
+  gh = GitHub()
+  print(gh.information('v1nam'. 'repo count'))
