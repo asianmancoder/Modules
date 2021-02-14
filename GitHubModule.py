@@ -1,7 +1,6 @@
 #This is a brand - new GitHub written by me!
 
 import requests
-import re
 
 
 class GitHub:
