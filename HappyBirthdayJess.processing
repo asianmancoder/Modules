@@ -1,0 +1,161 @@
+//This is a 'module' I created for my friend's birthday!
+//I think it's pretty cool. DO NOT COPY THIS CODE.
+
+fill(79, 45, 20);
+rect(100, 150, 200, 100);
+
+
+var ForJess = function() {
+    this.x = 10;
+    this.y = 150;
+};
+
+ForJess.prototype.display = function() {
+    fill(mouseX, mouseY, 100);
+    textSize(20);
+    text("For Jess...", 25, 50);
+};
+
+
+var Meow = function() {
+    this.x = 350;
+    this.y = 350;
+};
+
+Meow.prototype.display = function() {
+    fill(mouseX, mouseY, mouseY);
+    textSize(20);
+    text("Meow", 200, 350);
+};
+
+
+var BDaySnickers = function() {
+    this.x = 350;
+    this.y = 200;
+};
+
+BDaySnickers.prototype.display = function() {
+    fill(255, 255, 255);
+    textSize(20);
+    text("B-day Snicker Bar :)", 110, 210);
+};
+
+
+mouseClicked = function() {
+    fill(225, 0, 255);
+    textSize(20);
+    text("HAPPY BIRTHDAY, JESS!!!!", floor(random(-10))+50, floor(random(150))+50);
+};
+
+
+var WalkerThree = function() {
+    this.x = width/2;
+    this.y = height/2;
+};
+
+WalkerThree.prototype.display = function() {
+    stroke(217, 0, 255);
+    noStroke();
+    fill(mouseX, mouseY, 255);
+    ellipse(this.x+10, this.y+10, 5, 5);
+};
+
+// Randomly move right, left, down, or up
+WalkerThree.prototype.walk = function() {
+    var choice = floor(random(4));
+    if (choice === 0) {
+        //move right
+        this.x += 3;
+    } else if (choice === 1) {
+        //move left
+        this.x -= 3;
+    } else if (choice === 2) {
+        //move down
+        this.y += 3;
+    } else {
+        //move up
+        this.y -= 3;
+    } 
+};
+
+
+var WalkerTwo = function() {
+    this.x = width/2;
+    this.y = height/2;
+};
+
+WalkerTwo.prototype.display = function() {
+    stroke(252, 3, 227);
+    noStroke();
+    fill(mouseX, mouseY, 255);
+    ellipse(this.x-100, this.y+50, 5, 5);
+};
+
+// Randomly move right, left, down, or up
+WalkerTwo.prototype.walk = function() {
+    var choice = floor(random(4));
+    if (choice === 0) {
+        //move right
+        this.x += 3;
+    } else if (choice === 1) {
+        //move left
+        this.x -= 3;
+    } else if (choice === 2) {
+        //move down
+        this.y += 3;
+    } else {
+        //move up
+        this.y -= 3;
+    } 
+};
+
+
+var Walker = function() {
+    this.x = width/2;
+    this.y = height/2;
+};
+
+Walker.prototype.display = function() {
+    stroke(0, 255, 89);
+    noStroke();
+    fill(mouseX, mouseY, 129);
+    ellipse(this.x+100, this.y+-50, 5, 5);
+};
+
+// Randomly move right, left, down, or up
+Walker.prototype.walk = function() {
+    var choice = floor(random(4));
+    if (choice === 0) {
+        //move right
+        this.x += 3;
+    } else if (choice === 1) {
+        //move left
+        this.x -= 3;
+    } else if (choice === 2) {
+        //move down
+        this.y += 3;
+    } else {
+        //move up
+        this.y -= 3;
+    } 
+};
+
+var w = new Walker();
+var w_two = new WalkerTwo();
+var w_three = new WalkerThree();
+var bds = new BDaySnickers();
+var meow = new Meow();
+var fj = new ForJess();
+
+
+draw = function() {
+    fj.display();
+    meow.display();
+    bds.display();
+    w_three.walk();
+    w_three.display();
+    w_two.walk();
+    w_two.display();
+    w.walk();
+    w.display();
+};
