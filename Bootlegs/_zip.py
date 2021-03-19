@@ -1,9 +1,2 @@
-def _zip(l1, l2):
-  bootleg = [(l1[x], l2[x]) for x in range(len(l1))]
-
-  return bootleg
-
-
-#I ALSO MADE A LAMBDA:
-
-bootlegged = lambda l1, l2: [(l1[x], l2[x]) for x in range(len(l1))]
+def _zip(*data):
+  return [tuple(x[i] for x in data) for i in range(len(data[0]))]
