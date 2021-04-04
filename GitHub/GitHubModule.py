@@ -1,4 +1,4 @@
-#This is a brand - new GitHub written by me!
+# I utilized the GitHub REST API Data to write this.
 
 import requests
 
