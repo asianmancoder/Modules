@@ -26,7 +26,3 @@ class MorseCode:
   
   def decode(self, phrase):
     return "".join([self.morse_decoded[i] for i in phrase.upper().split('/')])
-
-
-mc = MorseCode()
-print(mc.encode('Joseph Lee'))
