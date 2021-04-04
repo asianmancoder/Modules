@@ -1,7 +1,8 @@
 import requests
 import re
 
-
+# LOL
+# This is an unfinished program
 
 class MakeMeme:
 
