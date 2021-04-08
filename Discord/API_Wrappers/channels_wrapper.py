@@ -1,8 +1,11 @@
+# uses the channels (/channels) endpoint, with __init__ argument of channel_id as channel id 
+
 import requests
 
 class Channel:
 
-    def __init__(self):
+    def __init__(self, channel_id):
+        self.channel_id = channel_id
         self.payload = {}
         self.headers = {}
         self.json = {}
@@ -15,5 +18,5 @@ class Channel:
         self.json = json
         self.Authentication = Authentication
     
-    def send_message(self, channel_id, message, msg_type):
+    def send_message(self, message):
         pass
