@@ -1,3 +1,3 @@
 # My-Modules
 
-**These are just some modules that I and my associates developed in... mostly Python and JavaScript.
+**These are just some modules that I and my associates developed in... mostly Python.
