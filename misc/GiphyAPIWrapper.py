@@ -19,11 +19,13 @@ class Giphy:
 
 
     def random_trending_gif(self):
+        # There might be an issue with the efficiency of my code in this function; never fear I shall fix it later.
+        
         data = requests.get(self.trending_url).json()
 
         with open("giphyData.txt", "w") as f:
             f.write(str(data))
-
+        
         with open("giphyData.txt", "r") as f:
             trending_json_data = f.readline()
             giphyURLs = [x for x in re.findall("'url': '(.*?)'", trending_json_data)]
