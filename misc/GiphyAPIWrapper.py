@@ -13,14 +13,13 @@ class Giphy:
 
     def __init__(self, API_KEY):
         self.base_url = "http://api.giphy.com/v1/gifs/"
-        self.api_key_param = "?api_key="
+        self.api_key_param = "api_key="
         self.API_KEY = API_KEY
+        self.trending_url = f"{self.base_url}trending?{self.api_key_param}{self.API_KEY}"
 
 
     def random_trending_gif(self):
-        trending_url = f"{self.base_url}trending{self.api_key_param}{self.API_KEY}"
-        data = requests.get(trending_url).json()
-
+        data = requests.get(self.trending_url).json()
 
         with open("giphyData.txt", "w") as f:
             f.write(str(data))
@@ -33,8 +32,7 @@ class Giphy:
 
 
     def first_trending_gif(self):
-        trending_url = f"{self.base_url}trending{self.api_key_param}{self.API_KEY}"
-        data = requests.get(trending_url).json()["data"][0]["url"]
+        data = requests.get(self.trending_url).json()["data"][0]["url"]
         return data
 
 
