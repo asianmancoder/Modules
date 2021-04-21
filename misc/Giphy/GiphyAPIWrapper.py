@@ -25,7 +25,7 @@ class Giphy:
 
 
     def get_random_trending_gif_url(self):
-        return random.choice(self._all_trending_gif_urls())
+        return random.choice(self.get_all_trending_gif_urls())
 
 
     def get_first_trending_gif_url(self):
