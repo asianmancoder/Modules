@@ -3,7 +3,6 @@
 
 import requests
 from requests.utils import quote
-import json
 import re
 import random
 
