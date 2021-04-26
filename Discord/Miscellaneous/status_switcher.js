@@ -1,7 +1,3 @@
-/*
-This module was originally created by a friend of mine... it's pretty cool!!
-*/
-
 const authToken = "u not 'gon see dis";
 const statuses = ["Add your statuses here"]
 
@@ -31,3 +27,29 @@ function setStatus(status) {
 setInterval(function() {
     setStatus(random(statuses));
 }, 10000); 
+
+
+// The above version was written by my friend Jess.
+// This is my version, formatted my way:
+
+
+const statuses = ["Add your statuses here"];
+
+let authtoken = "not safe to post";
+let content_type = "application/json";
+
+setInterval(function() {
+    let request = new XMLHttpRequest();
+    let url = "https://discord.com/api/v9/users/@me/settings";
+    // Snowflake format, I think.
+    let data = JSON.stringify({
+        "custom_status": {
+            "text": statuses[Math.floor(Math.random() * 10)]
+        }
+    });
+    
+    request.open("PATCH", url);
+    request.setRequestHeader("authorization", authtoken);
+    request.setRequestHeader("Content-Type", content_type);
+    request.send(data);
+}, 10000);
