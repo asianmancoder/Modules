@@ -1,0 +1,10 @@
+name: CreeperSpawn
+version: 1.0
+author: Joseph
+main: me.joseph.CreeperSpawn.Main
+description: Spawns 10 Creepers on Player
+
+commands:
+  creepspawn:
+    aliases: [cs]
+    description: /cs to spawn 10 creepers
