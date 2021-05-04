@@ -12,10 +12,10 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
 
     try:
         while True:
-            d = bytes(input("Type a message here: "), 'utf-8')
+            d = input("Type a message here: ").encode('utf-8')
             client.sendall(d)
 
-            data = client.recv(2048)
+            data = client.recv(2048).decode('utf-8')
             print(f"{HOST}: {data}")
 
     except ConnectionResetError:
