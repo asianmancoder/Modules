@@ -1,7 +1,6 @@
 # This code is from a Tech With Tim tutorial
 
 
-
 import socket
 import threading
 
