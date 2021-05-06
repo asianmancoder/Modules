@@ -1,7 +1,7 @@
 import socket
 
 
-HOST = "192.168.0.193"
+HOST = "192.168.0.193" # Is this safe to post? Let me know. fire#6945
 PORT = 5050
 
 
