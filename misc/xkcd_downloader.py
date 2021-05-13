@@ -55,8 +55,3 @@ class Downloader:
         f.write(img_bytes)
 
     return True
-
-  def test(self):
-    img_to_url = {k:v for k, v in zip(self.comic_img_urls, self.comic_urls)}
-
-    return img_to_url
