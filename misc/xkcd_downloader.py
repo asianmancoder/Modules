@@ -37,17 +37,26 @@ class Downloader:
         img_url = "https://" + re.search('<img src="//(.*?)" title=', url_src).group(1)
 
         self.comic_img_urls.append(img_url)
- 
+
       return self.comic_img_urls
-    except: 
+    except:
       return False
 
   def download_comics(self):
-    os.mkdir("XKCD Comics")
+    self.get_comic_urls()
+    self.get_comic_img_urls()
 
-    for num, img in enumerate(self.get_comic_img_urls(), 1):
-        with open("XKCD Comics/" + str(num) + ".jpg", "wb") as f:
-            img_content = requests.get(img).content
-            f.write(img_content)
+    img_to_url = {k:v for k, v in zip(self.comic_img_urls, self.comic_urls)}
+
+    os.mkdir("XKCD Comics")
+    for img in self.comic_img_urls:
+      with open("XKCD Comics/" + img_to_url[img].split("https://xkcd.com/")[1] + ".jpg", "wb") as f:
+        img_bytes = requests.get(img).content
+        f.write(img_bytes)
 
     return True
+
+  def test(self):
+    img_to_url = {k:v for k, v in zip(self.comic_img_urls, self.comic_urls)}
+
+    return img_to_url
