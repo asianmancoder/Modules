@@ -13,10 +13,10 @@ class guess_game {
             System.out.println("I'm thinking of a number from 0 to 100... what is your guess?");
             guess = scanner.nextInt();
 
-            if(guess > randint && (guess - randint) < 10) {
+            if(guess > randint && (guess - randint) < 10 || guess - randint == 10) {
                 System.out.println("You're very close... your guess is just a little more than the number!");
             }
-            else if(guess < randint && (randint - guess) < 10) {
+            else if(guess < randint && (randint - guess) < 10 || randint - guess == 10) {
                 System.out.println("You're very close... your guess is just a little less than the number!");
             }
             else if(guess > 100 || guess < 0 && guess != -1) {
@@ -26,14 +26,11 @@ class guess_game {
                 System.out.println("You got it correct!");
                 break;
             }
-            else if(String.valueOf(guess) == "I give up") {
-                System.out.println("The number was: " + String.valueOf(guess));
-            }
-            else if(guess != randint && ((guess - randint) > 10 || (randint - guess) > 10)) {
-                System.out.println("No.");
-            }
             else if(guess == -1) {
                 System.out.println("The number was: " + randint);
+                break;
+            }else {
+                System.out.println("No");
             }
         }
     }
