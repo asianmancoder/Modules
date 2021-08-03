@@ -4,5 +4,5 @@
 ```py
 import socket 
 
-socket.gethostbyaddr(socket.gethostbyname('securly.com'))
+socket.gethostbyaddr(socket.gethostbyname('securly.com'))[0]
 ```
