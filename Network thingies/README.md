@@ -2,7 +2,7 @@
 
 
 ```py
-import websocket
-import socket
-import http.server
+import socket 
+
+socket.gethostbyaddr(socket.gethostbyname('securly.com'))
 ```
