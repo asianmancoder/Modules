@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        const ws = new WebSocket("ws://localhost:8080");
+
+        ws.addEventListener("message", msg => {
+            alert(msg.data);
+            ws.send('[{"color": "red","value": "#f00"}]');});
+    </script>
+</html>
