@@ -1,14 +1,16 @@
 # I utilized the GitHub REST API Data to write this.
 # I wrote this comment using the GitHub Web Editor.
 
-import requests
 
+import requests
 
 class GitHub:
 
   def __init__(self):
     self.url = 'https://api.github.com/users/'
-    self.headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Mobile Safari/537.36'}
+    self.headers = {
+      'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Mobile Safari/537.36'
+      }
 
   def information(self, user, select):
     with requests.session() as s:
@@ -34,7 +36,6 @@ class GitHub:
         return infoDict[select]
       else: return f'{select} is an invalid key!'
 
-     
-if __name__ == "__main__":
-  gh = GitHub()
-  print(gh.information('v1nam'. 'repos'))
+
+gh = GitHub()
+print(gh.information('v1nam'. 'repos'))
