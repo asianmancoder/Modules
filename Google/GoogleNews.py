@@ -3,7 +3,7 @@ import re
 import random
 
 
-
+# This module is broken. Don't use it. I'll probs fix it in a month or six.
 def news(query):
   headers = {"user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"}
 
