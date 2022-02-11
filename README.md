@@ -1,3 +1,1 @@
-# My-Modules
-
-**These are just some modules that I and my associates developed in... mostly Python.**
+This is just some code that my friends and I wrote.
